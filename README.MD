@@ -1,4 +1,3 @@
-```md
 # 🔐 Projeto de Criptografia com RSA
 
 Este projeto implementa **criptografia RSA** usando a biblioteca `cryptography` em Python. A criptografia RSA é um método assimétrico que utiliza um **par de chaves** (pública e privada) para proteger dados.
