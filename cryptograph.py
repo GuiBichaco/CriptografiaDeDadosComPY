@@ -11,3 +11,16 @@ private_key = rsa.generate_private_key(
 )
 public_key = private_key.public_key()
 
+#2. Mensagem a ser criptografada
+mensagem = b"Esta é uma mensagem secreta."
+
+#3. Criptografar a mensagem com a chave pública
+mensagem_criptografada = public_key.encrypt(
+    mensagem,
+    padding.OAEP(
+        mgf=padding.MGF1(algorithm=hashes.SHA256()),
+        algorithm=hashes.SHA256(),
+        label=None
+    )
+)
+print("Mensagem criptografada:", mensagem_criptografada)
