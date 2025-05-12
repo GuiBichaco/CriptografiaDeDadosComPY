@@ -24,3 +24,14 @@ mensagem_criptografada = public_key.encrypt(
     )
 )
 print("Mensagem criptografada:", mensagem_criptografada)
+
+#4. Descriptografar a mensagem com a chave privada
+mensagem_descriptografada = private_key.decrypt(
+    mensagem_criptografada,
+    padding.OAEP(
+        mgf=padding.MGF1(algorithm=hashes.SHA256()),
+        algorithm=hashes.SHA256(),
+        label=None
+    )
+)
+print("Mensagem descriptografada:", mensagem_descriptografada.decode())
